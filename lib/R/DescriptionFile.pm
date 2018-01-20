@@ -159,8 +159,8 @@ __END__
 This module provides a parser for R's C<DESCRIPTION> file which is shipped 
 with a R package and contains meta data of the R package. 
 
-C<parse_file> or C<parse_text> returns object of this module class. It's a
-bless hash so fields of DESCRIPTION can be accessed via hash keys. There
+C<parse_file()> or C<parse_text()> returns object of this module class. It's
+a blessed hash, so fields of DESCRIPTION can be accessed via hash keys. There
 is also a C<get> method which does the same thing. 
 
 For dependency fields like C<Depends>, C<Suggests>, they would be parsed to

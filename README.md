@@ -6,7 +6,7 @@ R::DescriptionFile - R package DESCRIPTION file parser
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
@@ -23,8 +23,8 @@ version 0.001
 This module provides a parser for R's `DESCRIPTION` file which is shipped 
 with a R package and contains meta data of the R package. 
 
-`parse_file` or `parse_text` returns object of this module class. It's a
-bless hash so fields of DESCRIPTION can be accessed via hash keys. There
+`parse_file()` or `parse_text()` returns object of this module class. It's
+a blessed hash, so fields of DESCRIPTION can be accessed via hash keys. There
 is also a `get` method which does the same thing. 
 
 For dependency fields like `Depends`, `Suggests`, they would be parsed to
