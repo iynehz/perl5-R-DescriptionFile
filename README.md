@@ -6,7 +6,7 @@ R::DescriptionFile - R package DESCRIPTION file parser
 
 # VERSION
 
-version 0.002
+version 0.003
 
 # SYNOPSIS
 
