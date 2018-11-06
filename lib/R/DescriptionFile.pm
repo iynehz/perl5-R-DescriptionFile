@@ -54,8 +54,8 @@ sub _parse_lines {
     my $curr_line = &$get_line();
     while ( defined $curr_line ) {
         my $next_line = &$get_line();
-        if ( defined $next_line and $next_line =~ /^\s+(.*)/ ) {
-            $curr_line .= $1;
+        if ( defined $next_line and $next_line =~ /^\s+(.+)/ ) {
+            $curr_line .= ' ' . $1;
             next;
         }
 
