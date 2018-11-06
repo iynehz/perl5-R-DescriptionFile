@@ -9,9 +9,9 @@ use Path::Tiny;
 
 # VERSION
 
-my @keys_deps      = qw(Depends Suggests);
+my @keys_deps      = qw(Depends Imports Suggests LinkingTo Enhances);
 my @keys_list_type = qw(
-  Imports Enhances LinkingTo URL Additional_repositories
+  URL Additional_repositories VignetteBuilder
 );
 my @keys_logical = qw(
   LazyData LazyLoad KeepSource ByteCompile ZipData Biarch BuildVignettes
@@ -83,7 +83,7 @@ sub _parse_line {
         my $deps      = _split_list($val);
         my %deps_hash = map {
             $_ =~ /([^\(]*)(?:\((.*)\))?/;
-            my ( $pkg, $req ) = map { defined $_ ? _trim($_) : 0 } ( $1, $2 );
+            my ( $pkg, $req ) = map { defined $_ ? _trim($_) : '' } ( $1, $2 );
             ( $pkg => $req );
         } @$deps;
         $self->{$key} = \%deps_hash;
@@ -163,9 +163,13 @@ C<parse_file()> or C<parse_text()> returns object of this module class. It's
 a blessed hash, so fields of DESCRIPTION can be accessed via hash keys. There
 is also a C<get> method which does the same thing. 
 
-For dependency fields like C<Depends>, C<Suggests>, they would be parsed to
-hashrefs of the form C<{ pkgname =E<gt> version_spec }>. For list fields like
-C<LinkingTo>, C<URL>, they would be parsed to arrayrefs.
+For dependency fields like C<Depends>, C<Suggests>, C<Imports>, C<LinkingTo>,
+C<Enhances>, they would be parsed to hashrefs of the form
+C<{ pkgname =E<gt> version_spec }>, where version spec is either like
+C<(E<gt>= 1.0)>, or an empty string if it's not defined.
+
+For list fields like C<URL>, C<Additional_repositories>, C<VignetteBuilder>,
+they would be parsed to arrayrefs.
 
 =head1 SEE ALSO
 
