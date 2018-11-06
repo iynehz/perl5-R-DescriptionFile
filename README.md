@@ -6,7 +6,7 @@ R::DescriptionFile - R package DESCRIPTION file parser
 
 # VERSION
 
-version 0.003
+version 0.004
 
 # SYNOPSIS
 
@@ -27,9 +27,13 @@ with a R package and contains meta data of the R package.
 a blessed hash, so fields of DESCRIPTION can be accessed via hash keys. There
 is also a `get` method which does the same thing. 
 
-For dependency fields like `Depends`, `Suggests`, they would be parsed to
-hashrefs of the form `{ pkgname => version_spec }`. For list fields like
-`LinkingTo`, `URL`, they would be parsed to arrayrefs.
+For dependency fields like `Depends`, `Suggests`, `Imports`, `LinkingTo`,
+`Enhances`, they would be parsed to hashrefs of the form
+`{ pkgname => version_spec }`, where version spec is either like
+`(>= 1.0)`, or an empty string if it's not defined.
+
+For list fields like `URL`, `Additional_repositories`, `VignetteBuilder`,
+they would be parsed to arrayrefs.
 
 # SEE ALSO
 
