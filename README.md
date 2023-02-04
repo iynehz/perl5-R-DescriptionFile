@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/stphnlyd/perl5-R-DescriptionFile.svg?branch=master)](https://travis-ci.org/stphnlyd/perl5-R-DescriptionFile)
+[![Build Status](https://travis-ci.org/iynehz/perl5-R-DescriptionFile.svg?branch=master)](https://travis-ci.org/iynehz/perl5-R-DescriptionFile)
 
 # NAME
 
@@ -6,7 +6,7 @@ R::DescriptionFile - R package DESCRIPTION file parser
 
 # VERSION
 
-version 0.004
+version 0.005
 
 # SYNOPSIS
 
@@ -46,7 +46,7 @@ Stephan Loyd <sloyd@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2018 by Stephan Loyd.
+This software is copyright (c) 2018-2023 by Stephan Loyd.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

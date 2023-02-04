@@ -33,3 +33,8 @@ inc/
 /MANIFEST.bak
 /pm_to_blib
 /*.zip
+
+# dzil build tarball and dir
+R-DescriptionFile-*.tar.gz
+R-DescriptionFile-*/
+
